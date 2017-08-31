@@ -16,6 +16,12 @@ module.exports = {
         extensions: [ '', '.js', '.jsx' ]
     },
 	module: {
+		preLoaders: [
+			{
+				test: /\.json$/,
+				loader: 'json'
+			}
+		],
 		loaders: [
             { 
 				test: /\.css$/, 
@@ -24,7 +30,7 @@ module.exports = {
 			{
 				test: /\.jsx?$/,
 				exclude: /(node_modules|bower_components)/,
-				loader: 'babel',
+				loader: 'babel-loader',
 				query: {
 					presets: ['es2015', 'react']
 				}

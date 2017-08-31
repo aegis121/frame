@@ -80,19 +80,6 @@ export const Api = (endpoint, method, data={}, auth=noAuth()) => {
             }
 
             return ({result: json})
-
-            /*
-            let {status, result} = json
-            switch(status) {
-                case OK:
-                    return ({result})
-                case BAD:
-                    return Promise.reject(result)
-                default:
-                    return Promise.reject(`Status is neither OK not BAD. Found ${status}`)
-            }
-            */
-
         }
     ))
 }

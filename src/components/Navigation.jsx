@@ -13,6 +13,11 @@ const Navigation = () => (
                 Exchange
             </Link>
         </li>
+        <li>
+            <Link to="/eth" activeClassName="active">
+                Eth
+            </Link>
+        </li>
     </ul>
 )
 

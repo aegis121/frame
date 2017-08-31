@@ -20,9 +20,11 @@ class Background extends Component {
 }
 
 import Alert from './views/Alert'
+import Error from './views/Error'
 
 const Views = {
     'alert': Alert,
+    'error': Error
 }
 
 class Modal extends Component {

@@ -6,5 +6,6 @@ export const types = {
 
 export const actions = {
     showModal: (name, data) => ({type: types.MODAL_SHOW, name, data}),
-    closeModal: () => ({type: types.MODAL_HIDE})
+    closeModal: () => ({type: types.MODAL_HIDE}),
+    errorModal: (msg) => showModal('Error', {msg})
 }
