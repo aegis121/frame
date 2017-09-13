@@ -21,3 +21,11 @@ export const get = (...args) => {
 export const post = (...args) => {
     return api(methods.POST, ...args)    
 }
+
+export const deleted = (...args) => {
+    return api(methods.DELETE, ...args)
+}
+
+export const put = (...args) => {
+    return api(methods.PUT, ...args)
+}

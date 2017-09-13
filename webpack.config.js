@@ -13,16 +13,14 @@ module.exports = {
 		historyApiFallback: true
 	},
     resolve: {
-        extensions: [ '', '.js', '.jsx' ]
+        extensions: [ '.js', '.jsx' ]
     },
 	module: {
-		preLoaders: [
+		rules: [
 			{
 				test: /\.json$/,
-				loader: 'json'
-			}
-		],
-		loaders: [
+				loader: 'json-loader'
+			},
             { 
 				test: /\.css$/, 
 				loader: "style-loader!css-loader" 
