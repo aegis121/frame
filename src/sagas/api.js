@@ -3,8 +3,9 @@ import {take, put, call} from 'redux-saga/effects'
 
 import {Api} from '../api'
 
-export function* apiCall(action) {
-    let {method, onRequest, onSuccess, onFailure, endpoint, auth, data} = action
+export default function* apiCall(action) {
+    let {method, actions, endpoint, auth, data} = action
+    let {onRequest, onSuccess, onFailure} = actions;
     
     try {
         yield put({type: onRequest, data})

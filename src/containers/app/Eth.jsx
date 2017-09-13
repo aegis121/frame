@@ -34,6 +34,12 @@ class Eth extends React.Component {
                 <div>
                     {'Balance'}
                 </div>
+                <a
+                    href="javascript:void(0)"
+                    onClick={() => {this.props.sendOther()}}
+                >
+                    {'Other'}
+                </a>
                 <div>
                     <input
                         type="text"
@@ -67,6 +73,9 @@ const mapDispatchToProps = (dispatch, getState) => {
     return {
         send: function(address) {
             dispatch(EthActions.getBalance(address))
+        },
+        sendOther: function() {
+
         }
     }
 }

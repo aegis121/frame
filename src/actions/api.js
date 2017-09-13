@@ -5,11 +5,9 @@ export const types = {
     API_CALL: 'API_CALL'
 }
 
-const api = (method, onRequest, onSuccess, onFailure, endpoint, data, auth) => ({
+const api = (method, actions, endpoint, data, auth) => ({
     type: types.API_CALL,
-    onRequest,
-    onSuccess, 
-    onFailure, 
+    actions,
     endpoint, 
     method, 
     auth, 

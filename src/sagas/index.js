@@ -1,7 +1,7 @@
 
 import {fork, takeEvery} from 'redux-saga/effects'
 
-import {apiCall} from './utils'
+import apiCall from './api'
 import eth from './eth'
 
 import {types as ApiTypes} from '../actions/api'

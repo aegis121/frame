@@ -7,7 +7,7 @@ const reducer = (state=initialState, action) => {
     const {type} = action
 
     switch(type) {
-        case ExchangeTypes.EXCHANGERATES_REQUEST: {
+        case ExchangeTypes.EXCHANGERATES.onRequest: {
             const {currency} = action.data
 
             return Object.assign({}, state, {
@@ -16,7 +16,7 @@ const reducer = (state=initialState, action) => {
                 }
             })
         }
-        case ExchangeTypes.EXCHANGERATES_SUCCESS: {
+        case ExchangeTypes.EXCHANGERATES.onSuccess: {
             const {currency} = action.data
             const {rates} = action.result.data
             
@@ -27,7 +27,7 @@ const reducer = (state=initialState, action) => {
                 }
             })
         }
-        case ExchangeTypes.EXCHANGERATES_FAILURE:
+        case ExchangeTypes.EXCHANGERATES.onFailure:
             return state
     }
 

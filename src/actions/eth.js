@@ -1,21 +1,21 @@
 
+import {newTypes} from './types'
+
 export const ETH_CALL = 'ETH_CALL'
 
-const call = (onRequest, onSuccess, onFailure, endpoint, data={}) => ({
+const call = (actions, endpoint, data={}) => ({
     type: ETH_CALL,
-    onRequest,
-    onSuccess,
-    onFailure,
+    actions,
     endpoint,
     data
 })
 
 export const types = {
-    BALANCE_REQUEST: 'BALANCE_REQUEST',
-    BALANCE_SUCCESS: 'BALANCE_SUCCESS',
-    BALANCE_FAILURE: 'BALANCE_FAILURE'
+    BALANCE: newTypes('BALANCE'),
+    OTHER: newTypes('OTHER')
 }
 
 export const actions = {
-    getBalance: (address) => call(types.BALANCE_REQUEST, types.BALANCE_SUCCESS, types.BALANCE_FAILURE, 'getBalance', {address})
+    getBalance: (address) => call(types.BALANCE, 'getBalance', {address}),
+    other: () => call(types.OTHER, 'other')
 }

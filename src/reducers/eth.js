@@ -9,10 +9,10 @@ const reducer = (state=initialState, action) => {
     const {type} = action
 
     switch(type) {
-        case BalanceTypes.BALANCE_SUCCESS: {
+        case BalanceTypes.BALANCE.onSuccess: {
             return {balance: action.result.c[0]}
         }
-        case BalanceTypes.BALANCE_FAILURE: {
+        case BalanceTypes.BALANCE.onFailure: {
             // handle error
         }
     }

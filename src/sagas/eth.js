@@ -6,8 +6,9 @@ import {ETH_CALL} from '../actions/eth'
 const modules = require('../lib')
 
 function *ethCall(action) {
-    let {onRequest, onSuccess, onFailure, endpoint, data} = action
-
+    let {actions, endpoint, data} = action
+    let {onRequest, onSuccess, onFailure} = actions;
+    
     let func = modules[endpoint]
     if (func == undefined) {
         console.error("Endpoint " + endpoint + " does not exists")
