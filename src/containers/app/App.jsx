@@ -5,19 +5,23 @@ import {connect} from 'react-redux'
 import Modal from '../modal'
 import Navigation from '../../components/Navigation'
 
+import Loading from '../../components/Loading'
+import Simple from './Simple'
+
 class App extends React.Component {
     render() {
-        const {isOpen} = this.props.modal
+        let {active, msg, mode} = this.props.loading;
+        if (active) {
+            if (mode == "fund") {
+                return <Simple />
+            }
 
-        console.log(isOpen)
-        
+            return <Loading msg={msg} />
+        }
+
         return (
             <div>
-                {isOpen &&
-                    <Modal />
-                }
-                <Navigation />
-                {this.props.children}
+                {'Done'}
             </div>
         )
     }
@@ -25,7 +29,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        modal: state.modal
+        loading: state.app.loading
     }
 }
 

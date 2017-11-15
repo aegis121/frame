@@ -3,11 +3,12 @@ import {newTypes} from './types'
 
 export const ETH_CALL = 'ETH_CALL'
 
-const call = (actions, endpoint, data={}) => ({
+export const call = (actions, endpoint, data={}, field=undefined) => ({
     type: ETH_CALL,
     actions,
     endpoint,
-    data
+    data,
+    field,
 })
 
 export const types = {

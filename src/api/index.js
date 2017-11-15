@@ -13,11 +13,6 @@ export const methods = {
     DELETE
 }
 
-/*
-const OK    = "OK"
-const BAD   = "BAD"
-*/
-
 import {setItem, clearItem, getItem} from './storage'
 
 export const storage = {
